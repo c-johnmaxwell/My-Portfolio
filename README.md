@@ -49,7 +49,6 @@ This portfolio represents my professional journey as an Information Technology s
 ### Frontend
 - **HTML5**: Semantic markup and structure
 - **CSS3**: Modern styling with Flexbox/Grid
-- **JavaScript**: Interactive functionality
 - **SVG Icons**: Scalable vector graphics
 
 ### Design & Performance
@@ -65,41 +64,22 @@ This portfolio represents my professional journey as an Information Technology s
 - Code editor (VS Code, Sublime Text, etc.)
 - Git for version control
 
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/c-johnmaxwell/portfolio.git
-   cd portfolio
-   ```
-
-2. **Open in browser**
-   ```bash
-   # Option 1: Direct file opening
-   open index.html
-   
-   # Option 2: Local server (recommended)
-   python -m http.server 3000
-   # or
-   npx serve .
-   ```
-
-3. **View in browser**
-   Navigate to `http://localhost:3000` (if using local server)
 
 ## 📁 Project Structure
 
 ```
 portfolio/
-├── index.html              # Main HTML file
 ├── images/                 # Image assets
 │   ├── IMG_20250608_174429.jpg  # Profile picture
 │   ├── profile.jpg         # About section image
 │   ├── Bandit.png         # Project screenshots
-│   ├── RPS-Game.png
-│   ├── Calc.png
-│   └── Drawing.jpg
-├── vite.svg               # Favicon
+│   ├── RPS-Game.png         # Project screenshots
+│   ├── Calc.png         # Project screenshots
+|   ├── PigLat.png         # Project screenshots
+│   └── Drawing.jpg         # Project screenshots
+├── cv.odt              # Curriculum Vitae document
+├── cv.html              # Curriculum Vitae HTML file
+├── index.html              # Main HTML file
 └── README.md              # Project documentation
 ```
 
