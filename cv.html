@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Maxwell Chege - CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .print-controls {
+            max-width: 210mm;
+            margin: 0 auto 20px auto;
+            text-align: right;
+        }
+
+        .print-btn {
+            background: #5a00a1;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(90, 0, 161, 0.3);
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .print-btn:hover {
+            background: #4f46e5;
+            transform: translateY(-2px);
+        }
+
+        .cv-container {
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            max-width: 210mm;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #5a00a1, #4f46e5);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: #5a00a1;
+            border-bottom: 2px solid #5a00a1;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .profile-summary {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555;
+            text-align: justify;
+        }
+
+        .experience-item,
+        .education-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border-left: 3px solid #5a00a1;
+            background: #f8f9fa;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .position {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .company {
+            font-weight: 600;
+            color: #5a00a1;
+            margin-top: 0.2rem;
+        }
+
+        .date {
+            color: #666;
+            font-size: 0.9rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .description {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid #5a00a1;
+        }
+
+        .skill-category h4 {
+            color: #5a00a1;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-item {
+            background: white;
+            margin: 0.3rem 0.3rem 0.3rem 0;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.85rem;
+            border: 1px solid #e0e6ed;
+            transition: all 0.2s ease;
+        }
+
+        .skill-item:hover {
+            background: #5a00a1;
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .achievements {
+            list-style: none;
+        }
+
+        .achievement-item {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #555;
+        }
+
+        .achievement-item::before {
+            content: "🏆";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .project {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid #4f46e5;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .project h4 {
+            color: #4f46e5;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .project-tech {
+            background: #5a00a1;
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            display: inline-block;
+            margin: 0.2rem 0.2rem 0 0;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+            
+            .print-controls {
+                display: none;
+            }
+            
+            .cv-container {
+                box-shadow: none;
+                border-radius: 0;
+                max-width: none;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            .education-item,
+            .project {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            .header {
+                background: #5a00a1;
+            }
+            
+            .skill-item:hover,
+            .project:hover {
+                transform: none;
+                box-shadow: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .print-controls {
+                margin-bottom: 15px;
+            }
+            
+            .header {
+                padding: 1.5rem;
+            }
+            
+            .name {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .content {
+                padding: 1.5rem;
+            }
+            
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .date {
+                margin-top: 0.3rem;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 1rem;
+            }
+            
+            .name {
+                font-size: 1.8rem;
+                letter-spacing: 1px;
+            }
+            
+            .content {
+                padding: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="print-controls">
+        <button class="print-btn" onclick="window.print()">📄 Print CV</button>
+    </div>
+    
+    <div class="cv-container">
+        <header class="header">
+            <h1 class="name">CHEGE JOHN MAXWELL</h1>
+            <p class="title">Aspiring Cybersecurity Engineer & Fullstack Developer</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>c.johnmaxwell.m@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>💼</span>
+                    <span>linkedin.com/in/john-maxwell-71baa6324</span>
+                </div>
+                <div class="contact-item">
+                    <span>💻</span>
+                    <span>github.com/c-johnmaxwell</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Juja, Kenya</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <section class="section">
+                <h2 class="section-title">Professional Summary</h2>
+                <p class="profile-summary">
+                    Passionate Information Technology student with a strong foundation in cybersecurity, software development, and system administration. Currently pursuing a Bachelor's degree at JKUAT while actively expanding technical skills through the Power Learn Project (PLP) and Try Hack Me (thm). Demonstrated expertise in Linux systems, Python programming, and security fundamentals through practical projects. Combines technical prowess with creative thinking, evidenced by proficiency in pencil drawing and innovative problem-solving approaches. Seeking opportunities to contribute to cybersecurity initiatives while building towards the goal of establishing a security consulting firm.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="position">Power Learn Project (PLP) - Software Development</div>
+                            <div class="company">Ongoing Professional Development</div>
+                        </div>
+                        <div class="date">10th July 2025 - Present</div>
+                    </div>
+                    <div class="description">
+                        • Comprehensive full-stack development training<br>
+                        • Focus on modern web technologies and frameworks<br>
+                        • Collaborative project development and version control<br>
+                        • Industry-standard development practices
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="position">Bachelor of Science in Information Technology</div>
+                            <div class="company">Jomo Kenyatta University of Agriculture and Technology (JKUAT)</div>
+                        </div>
+                        <div class="date">26th Aug 2024 - Present</div>
+                    </div>
+                    <div class="description">
+                        • Specializing in Cybersecurity and Network Security<br>
+                        • Software Engineering and Database Management coursework<br>
+                        • Active member of IT Student Association<br>
+                        • Regular participant in over the wire games and catch the flag challenges
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="position">Kenya Certificate of Secondary Education (KCSE)</div>
+                            <div class="company">Nyeri High School</div>
+                        </div>                        
+                        <div class="date">13th Jan 2020 - 24th Nov 2023</div>
+                    </div>
+                    <div class="company">Grade: B+ (73 points)</div>
+                    <div class="description">
+                        • Straight A's in Mathematics and Physics<br>
+                        • Science Fair Certificate recipient<br>
+                        • Secretary of the Debate Club<br>
+                        • Active in Chess and Badminton clubs
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="position">Kenya Certificate of Primary Education (KCPE)</div>
+                            <div class="company">Kibutha Mixed Day and Boarding Primary School</div>
+                        </div>                        
+                        <div class="date">7th Jan 2015 - 6th Nov 2019</div>
+                    </div>
+                    <div class="company">Marks: 379</div>
+                    <div class="description">
+                        • Strong foundation in Mathematics and Science<br>
+                        • Remarkable class prefect<br>
+                        • Active participant in art class
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h4>Programming Languages</h4>
+                        <ul class="skill-list">
+                            <li class="skill-item">Python</li>
+                            <li class="skill-item">JavaScript</li>
+                            <li class="skill-item">HTML5</li>
+                            <li class="skill-item">CSS</li>
+                            <li class="skill-item">Rust</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Cybersecurity</h4>
+                        <ul class="skill-list">
+                            <li class="skill-item">Penetration Testing</li>
+                            <li class="skill-item">Cloud Security</li>
+                            <li class="skill-item">Linux Servers</li>
+                            <li class="skill-item">CompTIA Security +</li>
+                            <li class="skill-item">CompTIA A +</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Systems & Tools</h4>
+                        <ul class="skill-list">
+                            <li class="skill-item">Ubuntu</li>
+                            <li class="skill-item">Git & GitHub</li>
+                            <li class="skill-item">Bash</li>
+                            <li class="skill-item">Virtual Machines</li>
+                            <li class="skill-item">Amazon Web Services</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Creative Skills</h4>
+                        <ul class="skill-list">
+                            <li class="skill-item">Pencil Drawing</li>
+                            <li class="skill-item">Digital Art</li>
+                            <li class="skill-item">Chess</li>
+                            <li class="skill-item">UI/UX Design</li>
+                            <li class="skill-item">Problem Solving</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Projects & Achievements</h2>
+                <div class="projects">
+                    <div class="project">
+                        <h4>🏆 OverTheWire Bandit Completion</h4>
+                        <p>Successfully completed the entire Bandit wargame series, demonstrating proficiency in Linux command-line operations, file system navigation, and basic cryptography concepts.</p>
+                        <span class="project-tech">Linux</span>
+                        <span class="project-tech">Security</span>
+                    </div>
+                    
+                    <div class="project">
+                        <h4>🎮 Python Game Development</h4>
+                        <p>Developed interactive games including Rock, Paper, Scissors with clean user interfaces, game logic implementation, and proper error handling.</p>
+                        <span class="project-tech">Python</span>
+                        <span class="project-tech">Game Development</span>
+                    </div>
+                    
+                    <div class="project">
+                        <h4>🧮 Calculator Application</h4>
+                        <p>Built a functional calculator with comprehensive arithmetic operations, exception handling, and user-friendly interface design.</p>
+                        <span class="project-tech">Python</span>
+                        <span class="project-tech">Mathematics</span>
+                    </div>
+                    
+                    <div class="project">
+                        <h4>🌐 Portfolio Website</h4>
+                        <p>Designed and developed a responsive portfolio website showcasing technical skills, projects, and professional experience using modern web technologies.</p>
+                        <span class="project-tech">HTML5</span>
+                        <span class="project-tech">CSS3</span>
+                        <span class="project-tech">Responsive Design</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Key Achievements</h2>
+                <ul class="achievements">
+                    <li class="achievement-item">Completed OverTheWire Bandit cybersecurity challenges</li>
+                    <li class="achievement-item">Active participant in PLP Software Development Program</li>
+                    <li class="achievement-item">Developed multiple Python applications with clean architecture</li>
+                    <li class="achievement-item">Proficient in Ubuntu Linux system administration</li>
+                    <li class="achievement-item">Strong foundation in CompTIA A+ certification concepts</li>
+                    <li class="achievement-item">Creative portfolio combining technical and artistic skills</li>
+                    <li class="achievement-item">Excellent academic performance in mathematics and sciences</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Career Objectives</h2>
+                <p class="profile-summary">
+                    Aspiring to become a leading cybersecurity expert with deep technical knowledge and strong communication skills. My immediate goal is to gain hands-on experience in penetration testing, cloud security, and secure software development. Long-term vision includes establishing "lux!d," a cybersecurity consulting firm that provides innovative security solutions and educational content to help organizations build robust digital defenses. I aim to bridge the gap between complex security concepts and practical implementation, making cybersecurity accessible and understandable for businesses of all sizes.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Interests</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h4>🔐 Cybersecurity</h4>
+                        <p style="font-size: 0.9rem; line-height: 1.5;">Passionate about ethical hacking, vulnerability assessment, and developing secure coding practices.</p>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>☁️ Cloud Security</h4>
+                        <p style="font-size: 0.9rem; line-height: 1.5;">Exploring AWS and Azure security models, DevSecOps practices, and cloud infrastructure protection.</p>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>🤖 AI in Security</h4>
+                        <p style="font-size: 0.9rem; line-height: 1.5;">Interested in machine learning applications for threat detection and automated security responses.</p>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>🎨 Digital Art</h4>
+                        <p style="font-size: 0.9rem; line-height: 1.5;">Combining artistic creativity with technical skills to create intuitive and beautiful user experiences.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
