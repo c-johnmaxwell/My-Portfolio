@@ -730,7 +730,6 @@ body::-webkit-scrollbar-thumb {
   padding: 0 16px;
 }
 
-/*
 .mobile-nav {
   position: absolute;
   top: 0;
@@ -783,7 +782,7 @@ body::-webkit-scrollbar-thumb {
 .mobile-nav__btn {
   font-size: var(--size-sm);
 }
-*/
+
 @media (min-width: 475px) {
   .container {
     max-width: 475px;
